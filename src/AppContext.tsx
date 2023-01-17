@@ -16,7 +16,7 @@ interface IAppProvider {
 export const AppContext = createContext<IAppContext>({} as IAppContext);
 
 export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
-	const appTitle = 'Info Site';
+	const appTitle = 'Book Site';
 
 	useEffect(() => {
 		(async () => {

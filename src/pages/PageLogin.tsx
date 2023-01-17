@@ -1,16 +1,14 @@
 import { useContext } from 'react';
 import { AppContext } from '../AppContext';
 import { Helmet } from 'react-helmet';
-
-export const PageAbout = () => {
+export const PageLogin = () => {
 	const { appTitle } = useContext(AppContext);
-
 	return (
-		<div className="pageAbout">
+		<div className="page pageLogin">
 			<Helmet>
-				<title>{appTitle} - About</title>
+				<title>{appTitle} - login</title>
 			</Helmet>
-			<p>This is the about page.</p>
+			<p>This is the Login page.</p>
 		</div>
 	);
 };

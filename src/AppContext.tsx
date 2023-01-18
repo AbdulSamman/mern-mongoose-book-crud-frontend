@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { createContext } from 'react';
 import axios from 'axios';
+import { IBook } from './interfaces';
 
-const jobsUrl = 'https://edwardtanguay.vercel.app/share/jobs.json';
-const skillsUrl = 'https://edwardtanguay.vercel.app/share/skills.json';
+const backendUrl = 'http://localhost:3737';
 
 interface IAppContext {
 	appTitle: string;
+	books: IBook[];
 }
 
 interface IAppProvider {
@@ -16,17 +17,14 @@ interface IAppProvider {
 export const AppContext = createContext<IAppContext>({} as IAppContext);
 
 export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
+	const [books, setBooks] = useState<IBook[]>([]);
 	const appTitle = 'Book Site';
 
 	useEffect(() => {
 		(async () => {
-			// TODO
-		})();
-	}, []);
-
-	useEffect(() => {
-		(async () => {
-			//TODO
+			const response = (await axios.get(`${backendUrl}/books`)).data;
+			const _books: IBook[] = response.data;
+			setBooks(_books);
 		})();
 	}, []);
 
@@ -34,6 +32,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		<AppContext.Provider
 			value={{
 				appTitle,
+				books,
 			}}
 		>
 			{children}

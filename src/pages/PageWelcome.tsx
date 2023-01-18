@@ -18,7 +18,6 @@ export const PageWelcome = () => {
 							<img src={book.imageUrl} />
 							<div className="info">
 								<div className="title">
-									{' '}
 									<a href={book.buyUrl}></a> {book.title}
 								</div>
 								<div className="description">

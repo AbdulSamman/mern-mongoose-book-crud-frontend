@@ -22,8 +22,10 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 
 	useEffect(() => {
 		(async () => {
-			const response = (await axios.get(`${backendUrl}/books`)).data;
+			const response = await axios.get(`${backendUrl}/books`);
+
 			const _books: IBook[] = response.data;
+
 			setBooks(_books);
 		})();
 	}, []);

@@ -14,11 +14,11 @@ export const PageWelcome = () => {
 			<div className="books">
 				{books.map((book) => {
 					return (
-						<div className="book" key={book._id}>
+						<div className="book" key={JSON.stringify(book)}>
 							<img src={book.imageUrl} />
 							<div className="info">
 								<div className="title">
-									<a href={book.buyUrl}></a> {book.title}
+									<a href={book.buyUrl}> {book.title}</a>
 								</div>
 								<div className="description">
 									{book.description}

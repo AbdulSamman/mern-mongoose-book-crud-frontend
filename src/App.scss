@@ -32,5 +32,35 @@ body {
 				color: $header_color;
 			}
 		}
+		.books {
+			.book {
+				background-color: #222;
+				margin-bottom: 1rem;
+				padding: 2rem;
+				display: flex;
+				gap: 1rem;
+				align-items: start;
+				img {
+					width: 8rem;
+					object-fit: contain;
+				}
+				.info {
+					.title {
+						margin-bottom: 0.5rem;
+						font-size: 1.3rem;
+						a {
+							color: orange;
+						}
+					}
+					.description {
+						font-style: italic;
+						margin-bottom: 0.5rem;
+					}
+					.language {
+						color: yellowgreen;
+					}
+				}
+			}
+		}
 	}
 }
